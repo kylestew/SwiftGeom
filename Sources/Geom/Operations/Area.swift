@@ -1,28 +1,14 @@
 import Foundation
 import GeomAPI
+import GeomPolyUtils
 
 public protocol AreaDescribable {
     var area: Double { get }
 }
 
-//extension Vec : AreaDescribable {
-//    public var area: Double {
-//        w * h
-//    }
-//}
-//
-//extension Vec : AreaDescribable {
-//    public var area: Double {
-//        w * h * d
-//    }
-//}
-
 extension Rect : AreaDescribable {
     public var area: Double {
-        if let desc = size as? AreaDescribable {
-            return desc.area
-        }
-        return 0
+        size.width * size.height
     }
 }
 
@@ -32,9 +18,15 @@ extension Circle : AreaDescribable {
     }
 }
 
+extension Ellipse : AreaDescribable {
+    public var area: Double {
+        Double.pi * r.x * r.y
+    }
+}
+
 extension Polygon : AreaDescribable {
     public var area: Double {
-        0
+        abs(GeomPolyUtils.polyArea2(pts: self.points))
     }
 }
 

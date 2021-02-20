@@ -1,10 +1,10 @@
 import Foundation
 
 public struct Vec {
-    let x: Double
-    let y: Double
-    let z: Double
-    let w: Double
+    public let x: Double
+    public let y: Double
+    public let z: Double
+    public let w: Double
 
     public init(_ x: Double, _ y: Double, _ z: Double = 0, _ w: Double = 0) {
         self.x = x

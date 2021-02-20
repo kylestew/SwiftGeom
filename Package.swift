@@ -27,7 +27,7 @@ let package = Package(
             dependencies: ["GeomAPI"]),
         .target(
             name: "Geom",
-            dependencies: ["GeomAPI"]),
+            dependencies: ["GeomAPI", "GeomPolyUtils"]),
         .testTarget(
             name: "GeomTests",
             dependencies: ["GeomAPI", "Geom"]),
