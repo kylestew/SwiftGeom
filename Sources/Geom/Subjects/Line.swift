@@ -2,9 +2,9 @@ import Foundation
 import GeomAPI
 
 public struct Line: PCLike {
-    public let points: [Vec3]
+    public let points: [Vec]
 
-    public init(a: Vec3, b: Vec3) {
+    public init(a: Vec, b: Vec) {
         self.points = [a, b]
     }
 }

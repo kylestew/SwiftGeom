@@ -2,11 +2,11 @@ import Foundation
 import GeomAPI
 
 public protocol VertexConvertable {
-    var vertices: [Vec3] { get }
+    var vertices: [Vec] { get }
 }
 
 extension Rect: VertexConvertable {
-    public var vertices: [Vec3] {
+    public var vertices: [Vec] {
         []
     }
 }

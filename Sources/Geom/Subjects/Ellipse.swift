@@ -2,10 +2,10 @@ import Foundation
 import GeomAPI
 
 public struct Ellipse {
-    public let pos: Vec3
-    public let r: Vec3
+    public let pos: Vec
+    public let r: Vec
 
-    public init(pos: Vec3, r: Vec3) {
+    public init(pos: Vec, r: Vec) {
         self.pos = pos
         self.r = r
     }

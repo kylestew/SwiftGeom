@@ -5,7 +5,7 @@ public struct Circle {
     public let pos: Vec
     public let r: Double
 
-    public init(pos: Vec = Vec2.zero, r: Double = 1) {
+    public init(pos: Vec = Vec.zero, r: Double = 1) {
         self.pos = pos
         self.r = r
     }

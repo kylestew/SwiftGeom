@@ -11,10 +11,10 @@ struct GeomPolyUtils {
         }
 
         var area: Double = 0.0
-        for i in 0..<n {
-            area += Vec2.cross(u: pts[i], v: pts[i + 1])
-        }
-        area += Vec2.cross(u: pts[n], v: pts[0])
+//        for i in 0..<n {
+//            area += Vec.cross(u: pts[i], v: pts[i + 1])
+//        }
+//        area += Vec.cross(u: pts[n], v: pts[0])
         return abs(area) / 2.0
     }
 }

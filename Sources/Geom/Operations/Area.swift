@@ -5,17 +5,17 @@ public protocol AreaDescribable {
     var area: Double { get }
 }
 
-extension Vec2 : AreaDescribable {
-    public var area: Double {
-        w * h
-    }
-}
-
-extension Vec3 : AreaDescribable {
-    public var area: Double {
-        w * h * d
-    }
-}
+//extension Vec : AreaDescribable {
+//    public var area: Double {
+//        w * h
+//    }
+//}
+//
+//extension Vec : AreaDescribable {
+//    public var area: Double {
+//        w * h * d
+//    }
+//}
 
 extension Rect : AreaDescribable {
     public var area: Double {

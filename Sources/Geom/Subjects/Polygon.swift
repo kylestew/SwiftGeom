@@ -2,9 +2,9 @@ import Foundation
 import GeomAPI
 
 public struct Polygon: PCLike {
-    public let points: [Vec3]
+    public let points: [Vec]
 
-    public init(points: [Vec3]) {
+    public init(points: [Vec]) {
         self.points = points
     }
 }
