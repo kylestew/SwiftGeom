@@ -13,9 +13,6 @@ let package = Package(
         .library(
             name: "GeomPolyUtils",
             targets: ["GeomPolyUtils"]),
-//        .library(
-//            name: "GeomCGContext",
-//            targets: ["GeomCGContext"]),
     ],
     dependencies: [ ],
     targets: [
@@ -37,8 +34,5 @@ let package = Package(
         .testTarget(
             name: "GeomPolyUtilsTests",
             dependencies: ["GeomAPI", "GeomPolyUtils"]),
-//        .target(
-//            name: "GeomCGContext",
-//            dependencies: ["GeomAPI", "Geom"]),
     ]
 )
