@@ -1,15 +1,16 @@
 import XCTest
+import GeomAPI
 @testable import Geom
 
 final class VerticesTests: XCTestCase {
     func testRect() {
-//        let rect = Rect(pos: .zero, w: 2, h: 3)
-//        let expected = [
-//            Vec3(x: , y: 0),
-//            Vec3(x: 0, y: 0),
-//            Vec3(x: 0, y: 0),
-//            Vec3(x: 0, y: 0),
-//        ]
-//        XCTAssertEqual(rect.vertices, expected)
+        let rect = Rect(pos: Vec(1, 4), size: Vec(2, 3))
+        let expected = [
+            Vec(1, 4),
+            Vec(3, 4),
+            Vec(3, 7),
+            Vec(1, 7),
+        ]
+        XCTAssertEqual(rect.vertices, expected)
     }
 }

@@ -7,7 +7,14 @@ public protocol VertexConvertable {
 
 extension Rect: VertexConvertable {
     public var vertices: [Vec] {
-        []
+        let p = pos
+        let q = p + size
+        return [
+            p,
+            Vec(q.x, p.y),
+            q,
+            Vec(p.x, q.y)
+        ]
     }
 }
 

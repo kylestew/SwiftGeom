@@ -9,11 +9,11 @@ public struct Line: PCLike {
     }
 }
 
-//extension Polygon: CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
-//    public var debugDescription: String {
-//        return "Polygon[\(points.count) points]"
-//    }
-//    public var playgroundDescription: Any {
-//        return debugDescription
-//    }
-//}
+extension Line: CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+    public var debugDescription: String {
+        return "Line[\(points.count) points]"
+    }
+    public var playgroundDescription: Any {
+        return debugDescription
+    }
+}

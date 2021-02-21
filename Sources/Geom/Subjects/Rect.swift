@@ -2,6 +2,7 @@ import Foundation
 import GeomAPI
 
 public struct Rect {
+    /// top left of rectangle
     public let pos: Vec
     public let size: Vec
 
@@ -19,7 +20,7 @@ public struct Rect {
 
     public init(centerX: Double, centerY: Double,
                 width: Double, height: Double) {
-        self.pos = Vec(centerX, centerY)
+        self.pos = Vec(centerX - width/2, centerY - height/2)
         self.size = Vec(width, height)
     }
 
