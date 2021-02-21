@@ -6,12 +6,15 @@ let package = Package(
     products: [
         .library(
             name: "GeomAPI",
+            type: .dynamic,
             targets: ["GeomAPI"]),
         .library(
             name: "Geom",
+            type: .dynamic,
             targets: ["Geom"]),
         .library(
             name: "GeomPolyUtils",
+            type: .dynamic, 
             targets: ["GeomPolyUtils"]),
     ],
     dependencies: [ ],
