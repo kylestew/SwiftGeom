@@ -26,16 +26,16 @@ let package = Package(
             name: "GeomAPITests",
             dependencies: ["GeomAPI"]),
         .target(
-            name: "Geom",
-            dependencies: ["GeomAPI", "GeomPolyUtils"]),
-        .testTarget(
-            name: "GeomTests",
-            dependencies: ["GeomAPI", "Geom"]),
-        .target(
             name: "GeomPolyUtils",
             dependencies: ["GeomAPI"]),
         .testTarget(
             name: "GeomPolyUtilsTests",
             dependencies: ["GeomAPI", "GeomPolyUtils"]),
+        .target(
+            name: "Geom",
+            dependencies: ["GeomAPI", "GeomPolyUtils"]),
+        .testTarget(
+            name: "GeomTests",
+            dependencies: ["GeomAPI", "Geom"]),
     ]
 )
