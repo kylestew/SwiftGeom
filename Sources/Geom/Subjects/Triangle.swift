@@ -1,17 +1,21 @@
 import Foundation
 import GeomAPI
 
-public struct Polygon: PCLike {
+public struct Triangle: PCLike {
     public let points: [Vec]
 
     public init(pts: [Vec]) {
         self.points = pts
     }
+
+    public init(a: Vec, b: Vec, c: Vec) {
+        self.init(pts: [a, b, c])
+    }
 }
 
-extension Polygon: CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+extension Triangle: CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
     public var debugDescription: String {
-        return "Polygon[\(points.count) points]"
+        return "Triangle[\(points.count) points]"
     }
     public var playgroundDescription: Any {
         return debugDescription

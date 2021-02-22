@@ -1,7 +1,7 @@
 import Foundation
 import GeomAPI
 
-public struct Rect {
+public struct Rect : BoundsLike {
     /// top left of rectangle
     public let pos: Vec
     public let size: Vec

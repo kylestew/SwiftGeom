@@ -1,7 +1,7 @@
 import Foundation
 import GeomAPI
 
-public struct Circle {
+public struct Circle : SphereLike {
     public let pos: Vec
     public let r: Double
 

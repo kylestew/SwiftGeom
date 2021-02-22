@@ -1,7 +1,7 @@
 import Foundation
 import GeomAPI
 
-public struct Polygon: PCLike {
+public struct Polyline: PCLike {
     public let points: [Vec]
 
     public init(pts: [Vec]) {
@@ -9,9 +9,9 @@ public struct Polygon: PCLike {
     }
 }
 
-extension Polygon: CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
+extension Polyline: CustomDebugStringConvertible, CustomPlaygroundDisplayConvertible {
     public var debugDescription: String {
-        return "Polygon[\(points.count) points]"
+        return "Polyline[\(points.count) points]"
     }
     public var playgroundDescription: Any {
         return debugDescription
