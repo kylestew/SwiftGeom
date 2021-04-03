@@ -25,23 +25,3 @@ public extension Vec {
 }
 
 extension Vec: Equatable {}
-
-// MARK: - Coordinate Systems
-
-//public protocol CoordinateSystemConvertable {
-////    var asPolar: Vec { get }
-//    var asCartesian: Vec3 { get }
-//}
-//
-//extension Vec3 : CoordinateSystemConvertable {
-//    public var asCartesian: Vec3 {
-//        // (rad, theta) -> (x, y)
-//        Vec3(x: x * cos(y), y: x * sin(y))
-//    }
-//}
-//
-//public extension Array where Element: CoordinateSystemConvertable {
-//    var asCartesian: [Vec3] {
-//        self.map { $0.asCartesian }
-//    }
-//}

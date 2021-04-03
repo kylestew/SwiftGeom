@@ -5,14 +5,12 @@ public protocol BoundsDescribable {
     var bounds: Rect { get }
 }
 
-extension Rect : BoundsDescribable {
-    public var bounds: Rect {
-        self
-    }
-}
-
 extension Circle : BoundsDescribable {
     public var bounds: Rect {
+
+//        circle: ($: Circle) =>
+//            new Rect(subN2([], $.pos, $.r), mulN2(null, [2, 2], $.r)),
+
         Rect(pos: pos, size: Vec(2 * r, 2 * r))
     }
 }
@@ -21,6 +19,50 @@ extension Ellipse : BoundsDescribable {
     public var bounds: Rect {
         .zero
 //        Rect.init(pos: pos, w: 2 * r, h: 2 * r)
+
+//        ellipse: ($: Ellipse) =>
+//            new Rect(sub2([], $.pos, $.r), mul2(null, [2, 2], $.r)),
+
+    }
+}
+
+extension Line : BoundsDescribable {
+    public var bounds: Rect {
+        .zero
+
+//        line: ({ points: [a, b] }: Line) =>
+//            rectFromMinMax(min([], a, b), max([], a, b)),
+
+    }
+}
+
+extension Polygon : BoundsDescribable {
+    public var bounds: Rect {
+        .zero
+//        self
+    }
+}
+
+extension Polyline : BoundsDescribable {
+    public var bounds: Rect {
+        .zero
+//        self
+    }
+}
+
+extension Rect : BoundsDescribable {
+    public var bounds: Rect {
+        self
+        
+//        rect: ($: IShape) => <AABBLike>$.copy(),
+
+    }
+}
+
+extension Triangle : BoundsDescribable {
+    public var bounds: Rect {
+        .zero
+//        self
     }
 }
 
@@ -68,24 +110,15 @@ extension Ellipse : BoundsDescribable {
      arc: ($: Arc) =>
          rectFromMinMax(...arcBounds($.pos, $.r, $.axis, $.start, $.end)),
 
-     circle: ($: Circle) =>
-         new Rect(subN2([], $.pos, $.r), mulN2(null, [2, 2], $.r)),
-
      cubic: ({ points }: Cubic) =>
          rectFromMinMax(
              ...cubicBounds(points[0], points[1], points[2], points[3])
          ),
 
-     ellipse: ($: Ellipse) =>
-         new Rect(sub2([], $.pos, $.r), mul2(null, [2, 2], $.r)),
-
      group: ($: Group) => {
          const res = collBounds($.children, bounds);
          return res ? new Rect(...res) : undefined;
      },
-
-     line: ({ points: [a, b] }: Line) =>
-         rectFromMinMax(min([], a, b), max([], a, b)),
 
      path: (path: Path) => {
          const b = collBounds(
@@ -111,8 +144,6 @@ extension Ellipse : BoundsDescribable {
 
      quadratic: ({ points }: Quadratic) =>
          rectFromMinMax(...quadraticBounds(points[0], points[1], points[2])),
-
-     rect: ($: IShape) => <AABBLike>$.copy(),
 
      text: ($: Text) => new Rect(set2([], $.pos), [0, 0]),
  });
